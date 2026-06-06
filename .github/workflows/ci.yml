@@ -25,14 +25,7 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      - name: Prepare database directory
-        run: mkdir -p data
-        env:
-          DATABASE_URL: sqlite:///./data/database.db
-
       - name: Start server & test health endpoint
-        env:
-          DATABASE_URL: sqlite:///./data/database.db
         run: |
           uvicorn app.main:app --host 127.0.0.1 --port 8000 &
           sleep 3

@@ -1,0 +1,46 @@
+# Python
+__pycache__/
+*.py[codz]
+*$py.class
+*.so
+*.egg-info/
+*.egg
+dist/
+build/
+.eggs/
+*.db
+*.sqlite3
+*.sqlite
+
+# Environments
+.env
+.envrc
+.venv
+venv/
+env/
+
+# Node
+node_modules/
+npm-debug.log*
+
+# Frontend build
+dist/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Docker
+.dockerignore
+
+# Zip archives
+*.zip

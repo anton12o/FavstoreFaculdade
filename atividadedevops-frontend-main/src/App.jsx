@@ -10,6 +10,9 @@ function StoreLayout({ children }) {
     <div className="min-h-screen" style={{ background: 'var(--bg)' }}>
       <Navbar />
       <main>{children}</main>
+      <footer className="py-4 text-sm text-center text-amber-800/60 border-t border-amber-200">
+        © 2025 · Thauany Honorato · Guilherme Pinheiro · Antônio Frota
+      </footer>
     </div>
   );
 }

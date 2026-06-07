@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const BASE_URL = import.meta.env.VITE_API_URL || 'https://favstorefaculdade.onrender.com';
-const FAKE_STORE = 'https://fakestoreapi.com';
+const FAKE_STORE = import.meta.env.VITE_FAKE_STORE_API_URL || 'https://fakestoreapi.com';
 
 export const api = axios.create({
   baseURL: BASE_URL,
@@ -19,6 +19,11 @@ export const authApi = {
   login:    (data) => api.post('/customers/login', data),    // POST /customers/login  ← adaptar ao backend
   me:       (id)   => api.get(`/customers/${id}`),           // GET  /customers/:id
   update:   (id, data) => api.put(`/customers/${id}`, data), // PUT  /customers/:id
+};
+
+// Produtos (proxy via backend)
+export const productsApi = {
+  list: () => api.get('/products'),
 };
 
 // Favoritos do usuário logado

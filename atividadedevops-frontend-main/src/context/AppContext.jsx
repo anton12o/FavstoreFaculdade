@@ -1,5 +1,5 @@
 import { createContext, useContext, useState, useCallback, useEffect, useRef } from 'react';
-import { authApi, favoritesApi, setAuthUser } from '../services/api';
+import { authApi, favoritesApi, productsApi, setAuthUser } from '../services/api';
 import toast from 'react-hot-toast';
 
 const AppContext = createContext(null);
@@ -18,9 +18,8 @@ export function AppProvider({ children }) {
 
   useEffect(() => {
     setProductsLoading(true);
-    fetch('https://fakestoreapi.com/products/category/jewelery')
-      .then(r => r.json())
-      .then(data => setAllProducts(data))
+    productsApi.list()
+      .then(({ data }) => setAllProducts(data))
       .catch(() => toast.error('Erro ao carregar produtos'))
       .finally(() => setProductsLoading(false));
   }, []);

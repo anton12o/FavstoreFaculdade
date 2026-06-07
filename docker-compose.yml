@@ -8,6 +8,7 @@ services:
       - favstore-data:/app/data
     environment:
       - DATABASE_URL=sqlite:///./data/database.db
+      - CORS_ORIGINS=http://localhost:80,http://localhost:5173
     restart: unless-stopped
 
   frontend:

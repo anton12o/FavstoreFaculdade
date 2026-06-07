@@ -21,11 +21,6 @@ export const authApi = {
   update:   (id, data) => api.put(`/customers/${id}`, data), // PUT  /customers/:id
 };
 
-// Produtos (proxy via backend)
-export const productsApi = {
-  list: () => api.get('/products'),
-};
-
 // Favoritos do usuário logado
 export const favoritesApi = {
   list:   (userId)            => api.get(`/customers/${userId}/favorites`),

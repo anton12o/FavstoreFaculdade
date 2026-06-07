@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000';
+const BASE_URL = import.meta.env.VITE_API_URL || 'https://favstorefaculdade.onrender.com';
 const FAKE_STORE = 'https://fakestoreapi.com';
 
 export const api = axios.create({
